@@ -31,7 +31,12 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-5 mt-4 text-gray-300">
-              <a href="#" className="hover:text-white transition">
+              <a
+  href="https://www.linkedin.com/company/inncampus/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-white transition"
+>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -42,7 +47,12 @@ export default function Footer() {
                 </svg>
               </a>
 
-              <a href="#" className="hover:text-white transition">
+              <a
+  href="https://www.instagram.com/incampus.co/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-white transition"
+>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
