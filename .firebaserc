@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "incampus-education"
+  },
+  "targets": {
+    "incampus-education": {
+      "hosting": {
+        "incampus": [
+          "incampus"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -75,26 +75,30 @@ setLoading(false);
   if (!open) return null;
 
   return (
+  <div
+    className="fixed inset-0 bg-black/50 flex items-start sm:items-center justify-center z-50 px-4 py-4 sm:py-6"
+    onClick={onClose}
+  >
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4"
-      onClick={onClose}
+      className="bg-white w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative"
+      onClick={(e) => e.stopPropagation()}
     >
-      <div
-        className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl p-8 relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-5 text-3xl text-gray-500 hover:text-black"
-        >
-          ×
-        </button>
-
-        <h2 className="text-3xl font-bold text-center text-gray-900">
+      <div className="flex items-center justify-between px-5 sm:px-8 py-4 border-b border-gray-100 bg-white sticky top-0 z-10">
+        <h2 className="text-lg sm:text-2xl font-bold text-gray-900">
           Student Application Form
         </h2>
 
-        <p className="text-center text-gray-500 mt-3">
+        <button
+          onClick={onClose}
+          className="text-3xl leading-none text-gray-500 hover:text-black shrink-0"
+          aria-label="Close popup"
+        >
+          ×
+        </button>
+      </div>
+
+      <div className="overflow-y-auto px-5 sm:px-8 py-6 sm:py-8">
+        <p className="text-center text-gray-500 mb-8">
           Fill in your details and our team will contact you.
         </p>
 
@@ -127,7 +131,7 @@ setLoading(false);
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="grid md:grid-cols-2 gap-6 mt-10"
+            className="grid md:grid-cols-2 gap-6"
           >
             <div>
               <label className="block text-sm font-medium text-gray-700">
@@ -159,36 +163,36 @@ setLoading(false);
             </div>
 
             <div>
-  <label className="block text-sm font-medium text-gray-700">
-    Phone Number
-  </label>
+              <label className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
 
-  <div className="flex mt-2">
-    <div className="flex items-center px-4 border border-r-0 border-gray-300 rounded-l-xl bg-gray-100 text-gray-700 font-medium">
-      +91
-    </div>
+              <div className="flex mt-2">
+                <div className="flex items-center px-4 border border-r-0 border-gray-300 rounded-l-xl bg-gray-100 text-gray-700 font-medium">
+                  +91
+                </div>
 
-    <input
-      type="tel"
-      name="phone"
-      required
-      maxLength={10}
-      value={formData.phone}
-      onChange={(e) => {
-        const value = e.target.value.replace(/\D/g, "");
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  maxLength={10}
+                  value={formData.phone}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, "");
 
-        if (value.length <= 10 && (value === "" || /^[6-9]/.test(value))) {
-          setFormData({
-            ...formData,
-            phone: value,
-          });
-        }
-      }}
-      placeholder="Enter 10 digit number"
-      className="w-full border border-gray-300 rounded-r-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-    />
-  </div>
-</div>
+                    if (value.length <= 10 && (value === "" || /^[6-9]/.test(value))) {
+                      setFormData({
+                        ...formData,
+                        phone: value,
+                      });
+                    }
+                  }}
+                  placeholder="Enter 10 digit number"
+                  className="w-full border border-gray-300 rounded-r-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
@@ -202,7 +206,6 @@ setLoading(false);
                 className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select State</option>
-
                 <option>Andhra Pradesh</option>
                 <option>Arunachal Pradesh</option>
                 <option>Assam</option>
@@ -231,7 +234,6 @@ setLoading(false);
                 <option>Uttar Pradesh</option>
                 <option>Uttarakhand</option>
                 <option>West Bengal</option>
-
                 <option>Andaman and Nicobar Islands</option>
                 <option>Chandigarh</option>
                 <option>Dadra and Nagar Haveli and Daman and Diu</option>
@@ -240,7 +242,6 @@ setLoading(false);
                 <option>Ladakh</option>
                 <option>Lakshadweep</option>
                 <option>Puducherry</option>
-
                 <option>Other</option>
               </select>
             </div>
@@ -282,23 +283,24 @@ setLoading(false);
 
             <div className="md:col-span-2">
               <button
-  type="submit"
-  disabled={loading}
-  className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-4 rounded-xl font-semibold text-lg shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
->
-  {loading ? (
-    <>
-      <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-      Submitting...
-    </>
-  ) : (
-    "Submit Application"
-  )}
-</button>
+                type="submit"
+                disabled={loading}
+                className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-4 rounded-xl font-semibold text-lg shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
+              >
+                {loading ? (
+                  <>
+                    <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit Application"
+                )}
+              </button>
             </div>
           </form>
         )}
       </div>
     </div>
-  );
+  </div>
+);
 }

@@ -3,7 +3,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import StudentPopup from "@/components/StudentPopup";
 
 export default function Home() {
@@ -75,14 +74,12 @@ export default function Home() {
     <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
       {/* IMAGE */}
       <div className="relative h-[400px] w-full">
-        <Image
-          src="/images/students.jpg"
-          alt="Students studying abroad"
-          fill
-          className="object-cover"
-        />
-      </div>
-
+  <img
+    src="/images/students.jpg"
+    alt="Students studying abroad"
+    className="h-full w-full object-cover"
+  />
+</div>
       
     </div>
   </div>
