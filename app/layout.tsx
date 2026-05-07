@@ -16,8 +16,76 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InCampus Education",
-  description: "Study Abroad Consultancy",
+  title:
+    "InCampus | Abroad Education Consultancy & Study Abroad Guidance",
+
+  description:
+    "InCampus is a trusted abroad education consultancy helping students study in top international universities. Get free university shortlists, admission guidance, visa support, and expert counselling for studying abroad.",
+
+  keywords: [
+    "abroad education consultancy",
+    "study abroad consultancy",
+    "study abroad consultants",
+    "overseas education consultants",
+    "international university admissions",
+    "study abroad guidance",
+    "student visa consultancy",
+    "study in USA",
+    "study in UK",
+    "study in Canada",
+    "study in Australia",
+    "study in Europe",
+    "free university shortlist",
+    "education consultants",
+    "foreign education consultancy",
+    "InCampus Education",
+  ],
+
+  authors: [{ name: "InCampus Education" }],
+
+  creator: "InCampus Education",
+
+  publisher: "InCampus Education",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    title:
+      "InCampus | Abroad Education Consultancy & Study Abroad Guidance",
+
+    description:
+      "Get expert counselling, university shortlists, admission guidance, and visa support for studying abroad.",
+
+    url: "https://incampus.web.app",
+
+    siteName: "InCampus Education",
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "InCampus | Abroad Education Consultancy & Study Abroad Guidance",
+
+    description:
+      "Get expert counselling, admission guidance, and university shortlists for studying abroad.",
+  },
+
+  category: "Education",
 };
 
 export default function RootLayout({
