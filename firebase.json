@@ -2,6 +2,7 @@
   "hosting": {
     "target": "incampus",
     "public": "out",
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
