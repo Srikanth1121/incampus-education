@@ -1,14 +1,13 @@
 // app/getshortlist/page.tsx
+import type { Metadata } from "next";
+import GetShortlistClient from "@/components/GetShortlistClient";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Get Free Shortlist | InCampus",
-  description:
-    "Fill your basic details and get a free personalized shortlist.",
-
+  description: "Fill your basic details and get a free personalized shortlist.",
   openGraph: {
     title: "Get Free Shortlist",
-    description:
-      "Fill your basic details and get a free personalized shortlist.",
+    description: "Fill your basic details and get a free personalized shortlist.",
     images: [
       {
         url: "https://incampus.web.app/og-banner.png",
@@ -18,12 +17,14 @@ export const metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Get Free Shortlist",
-    description:
-      "Fill your basic details and get a free personalized shortlist.",
+    description: "Fill your basic details and get a free personalized shortlist.",
     images: ["https://incampus.web.app/og-banner.png"],
   },
 };
+
+export default function Page() {
+  return <GetShortlistClient />;
+}
