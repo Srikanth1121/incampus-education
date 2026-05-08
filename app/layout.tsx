@@ -95,8 +95,9 @@ images: [
 
     description:
       "Get expert counselling, admission guidance, and university shortlists for studying abroad.",
+      images: ["/og-banner.jpg"],
   },
-images: ["/og-banner.jpg"],
+
   category: "Education",
 };
 

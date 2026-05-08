@@ -287,7 +287,30 @@ export default function Home() {
             ))}
 
           </div>
+<div className="mt-16 flex flex-wrap gap-4 justify-center">
 
+  <a
+    href="/study-abroad-consultancy-hyderabad"
+    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+  >
+    Study Abroad Consultancy in Hyderabad
+  </a>
+
+  <a
+    href="/study-abroad-consultancy-telangana"
+    className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-semibold transition"
+  >
+    Study Abroad Consultancy in Telangana
+  </a>
+
+  <a
+    href="/study-in-usa"
+    className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-semibold transition"
+  >
+    Study in USA
+  </a>
+
+</div>
         </div>
 
       </section>
