@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Get Free Shortlist | InCampus",
   description: "Fill your basic details and get a free personalized shortlist.",
   openGraph: {
-    title: "Are You Planning to Study Abroad?, Get Free Shortlist",
+    title: "Are You Planning to Study Abroad?, Get Free Shortlist on your email",
     description: "Fill your basic details and get a free personalized shortlist.",
     images: [
       {
