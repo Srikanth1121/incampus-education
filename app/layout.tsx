@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://incampus.web.app"),
   verification: {
   google: "nLQmxkhjUkr-N3uzeCNNBeWpwD8OSpPKxww9GQ3Vs3k",
 },
@@ -73,6 +74,8 @@ export const metadata: Metadata = {
     url: "https://incampus.web.app",
 
     siteName: "InCampus Education",
+
+    
 images: [
   {
     url: "/og-banner.jpg",
