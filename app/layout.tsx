@@ -75,10 +75,10 @@ export const metadata: Metadata = {
 
     siteName: "InCampus Education",
 
-    
+
 images: [
   {
-    url: "/og-banner.jpg",
+    url: "/og-banner.png",
     width: 1200,
     height: 630,
     alt: "InCampus Study Abroad",
@@ -98,7 +98,7 @@ images: [
 
     description:
       "Get expert counselling, admission guidance, and university shortlists for studying abroad.",
-      images: ["/og-banner.jpg"],
+      images: ["/og-banner.png"],
   },
 
   category: "Education",
