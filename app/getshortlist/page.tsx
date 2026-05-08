@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import GetShortlistClient from "@/components/GetShortlistClient";
 
 export const metadata: Metadata = {
-  title: "Get Free Shortlist | InCampus",
+  title: "Are You Planning to Study Abroad? Get a free personalized shortlist of universities directly on your email.| InCampus",
   description: "Fill your basic details and get a free personalized shortlist.",
   openGraph: {
     title: "Get Free Shortlist",
