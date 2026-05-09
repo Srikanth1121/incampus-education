@@ -165,57 +165,10 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+              
 
-              <div>
-  <label className="block text-sm font-medium text-gray-700">
-    Phone Number
-  </label>
+              
 
-  <div className="flex mt-2">
-    
-    <div className="flex items-center px-4 border border-r-0 border-gray-300 rounded-l-xl bg-gray-100 text-gray-700 font-medium">
-      +91
-    </div>
-
-    <input
-      type="tel"
-      name="phone"
-      required
-      maxLength={10}
-      value={formData.phone}
-      onChange={(e) => {
-  const value = e.target.value.replace(/\D/g, "");
-
-  if (
-    value.length <= 10 &&
-    (value === "" || /^[6-9]/.test(value))
-  ) {
-    setFormData({
-      ...formData,
-      phone: value,
-    });
-  }
-}}
-      placeholder="Enter 10 digit number"
-      className="w-full border border-gray-300 rounded-r-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-    />
-
-  </div>
-</div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -421,12 +374,62 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
      className="w-28 border border-l-0 border-gray-300 rounded-r-xl px-3 py-3 outline-none focus:ring-2 focus:ring-blue-500 bg-white"
     >
       <option value="">Scale</option>
-      <option>10</option>
-      <option>7</option>
-      <option>5</option>
       <option>4</option>
+      <option>5</option>
+      <option>7</option>
+      <option>10</option>
       <option>100</option>
     </select>
+
+  </div>
+</div>
+<div>
+  <label className="block text-sm font-medium text-gray-700">
+    Email Address
+  </label>
+  <input
+    type="email"
+    name="email"
+    required
+    value={formData.email}
+    onChange={handleChange}
+    placeholder="Enter your email"
+    className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+  />
+</div>
+<div>
+  <label className="block text-sm font-medium text-gray-700">
+    Phone Number
+  </label>
+
+  <div className="flex mt-2">
+    
+    <div className="flex items-center px-4 border border-r-0 border-gray-300 rounded-l-xl bg-gray-100 text-gray-700 font-medium">
+      +91
+    </div>
+
+    <input
+      type="tel"
+      name="phone"
+      required
+      maxLength={10}
+      value={formData.phone}
+      onChange={(e) => {
+        const value = e.target.value.replace(/\D/g, "");
+
+        if (
+          value.length <= 10 &&
+          (value === "" || /^[6-9]/.test(value))
+        ) {
+          setFormData({
+            ...formData,
+            phone: value,
+          });
+        }
+      }}
+      placeholder="Enter 10 digit number"
+      className="w-full border border-gray-300 rounded-r-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+    />
 
   </div>
 </div>
