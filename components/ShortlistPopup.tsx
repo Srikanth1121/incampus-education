@@ -96,30 +96,36 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
   };
 
   if (!open) return null;
+const fieldClass =
+  "w-full mt-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100";
 
+const labelClass = "block text-sm font-semibold text-slate-700";
   return (
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 px-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-white w-full max-w-3xl rounded-3xl shadow-2xl p-8 relative max-h-[90vh] overflow-y-auto"
+       className="bg-white w-full max-w-4xl h-[90vh] rounded-[28px] shadow-2xl relative overflow-hidden border border-white/20 flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-5 text-3xl text-gray-500 hover:text-black"
-        >
+        <div className="h-2 w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500" />
+
+<button
+  onClick={onClose}
+  className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-slate-100 text-2xl text-slate-500 transition hover:bg-slate-200 hover:text-slate-900"
+  aria-label="Close popup"
+>
           ×
         </button>
-
+<div className="flex-1 overflow-y-auto pr-10 [scrollbar-gutter:stable]">
         {submitted ? (
-          <div className="py-14 text-center">
-            <div className="mx-auto h-20 w-20 rounded-full bg-green-100 flex items-center justify-center animate-bounce">
+          <div className="flex flex-1 items-center justify-center px-6 py-14 text-center">
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 ring-8 ring-emerald-50">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-10 h-10 text-green-600"
+                className="h-10 w-10 text-emerald-600"
               >
                 <path
                   d="M5 13l4 4L19 7"
@@ -140,30 +146,43 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
             </p>
           </div>
         ) : (
-          <>
-            <h2 className="text-3xl font-bold text-center text-gray-900">
-              Free Shortlist Form
-            </h2>
+         <>
+  <div className="border-b border-slate-100 bg-gradient-to-br from-slate-50 to-white px-6 py-6 sm:px-8">
+    
+    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+      Free University Shortlist
+    </div>
 
-            <p className="text-center text-gray-500 mt-3">
-              Fill your details and get a free shortlist.
-            </p>
+    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      Get Your Free Shortlist
+    </h2>
 
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-10">
+    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
+      Fill the form and receive a personalized university shortlist on your email.
+    </p>
+
+  </div>
+
+  <div className="px-6 py-6 pr-10 sm:px-8">
+
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-5 md:grid-cols-2"
+    >
+              
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+  <label className={labelClass}>Full Name</label>
+
+  <input
+    type="text"
+    name="name"
+    required
+    value={formData.name}
+    onChange={handleChange}
+    placeholder="Enter your name"
+    className={fieldClass}
+  />
+</div>
 
               
 
@@ -171,16 +190,15 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
 
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  State
-                </label>
-                <select
-                  name="state"
-                  required
-                  value={formData.state}
-                  onChange={handleChange}
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                >
+  <label className={labelClass}>State</label>
+
+  <select
+    name="state"
+    required
+    value={formData.state}
+    onChange={handleChange}
+    className={fieldClass}
+  >
                   <option value="">Select State</option>
                   <option>Andhra Pradesh</option>
                   <option>Arunachal Pradesh</option>
@@ -223,46 +241,45 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  Destination Country
-                </label>
-                <input
-                  type="text"
-                  name="destinationCountry"
-                  required
-                  value={formData.destinationCountry}
-                  onChange={handleChange}
-                  placeholder="Enter destination country Example - USA, UK, Canada"
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+  <label className={labelClass}>Destination Country</label>
+
+  <input
+    type="text"
+    name="destinationCountry"
+    required
+    value={formData.destinationCountry}
+    onChange={handleChange}
+    placeholder="Enter destination country Example - USA, UK, Canada"
+    className={fieldClass}
+  />
+</div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  Course
-                </label>
-                <input
-                  type="text"
-                  name="course"
-                  required
-                  value={formData.course}
-                  onChange={handleChange}
-                  placeholder="Enter course, Example -MS in Computer Science"
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+  <label className={labelClass}>Course</label>
+
+  <input
+    type="text"
+    name="course"
+    required
+    value={formData.course}
+    onChange={handleChange}
+    placeholder="Enter course, Example -MS in Computer Science"
+    className={fieldClass}
+  />
+</div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  IELTS / TOEFL / Duolingo
-                </label>
-                <select
-                  name="ieltsToeflDuolingo"
-                  required
-                  value={formData.ieltsToeflDuolingo}
-                  onChange={handleChange}
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                >
+               <label className={labelClass}>
+  IELTS / TOEFL / Duolingo
+</label>
+
+<select
+  name="ieltsToeflDuolingo"
+  required
+  value={formData.ieltsToeflDuolingo}
+  onChange={handleChange}
+  className={fieldClass}
+>
                   <option value="">Select</option>
                   <option>IELTS</option>
                   <option>TOEFL</option>
@@ -271,19 +288,18 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Score
-                </label>
-                <input
-                  type="text"
-                  name="ieltsToeflDuolingoScore"
-                  required
-                  value={formData.ieltsToeflDuolingoScore}
-                  onChange={handleChange}
-                  placeholder="Enter score"
-                  className="w-full mt-2 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+  <label className={labelClass}>Score</label>
+
+  <input
+    type="text"
+    name="ieltsToeflDuolingoScore"
+    required
+    value={formData.ieltsToeflDuolingoScore}
+    onChange={handleChange}
+    placeholder="Enter score"
+    className={fieldClass}
+  />
+</div>
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700">
@@ -437,7 +453,7 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-4 rounded-xl font-semibold text-lg shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:from-blue-700 hover:to-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {loading ? (
                     <>
@@ -450,9 +466,11 @@ export default function ShortlistPopup({ open, onClose }: ShortlistPopupProps) {
                 </button>
               </div>
             </form>
+            </div>
           </>
         )}
       </div>
+    </div>
     </div>
   );
 }
