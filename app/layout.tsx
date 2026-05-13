@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   verification: {
   google: "nLQmxkhjUkr-N3uzeCNNBeWpwD8OSpPKxww9GQ3Vs3k",
 },
+other: {
+  "google-adsense-account": "ca-pub-5285036146077021",
+},
   title:
   
     "InCampus | Abroad Education Consultancy & Study Abroad Guidance",
